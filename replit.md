@@ -75,3 +75,6 @@ Preferred communication style: Simple, everyday language.
 - **Production Build**: Optimized Vite build with proper asset handling
 - **Static Serving**: Express static file serving for production
 - **Environment Variables**: DATABASE_URL configuration for PostgreSQL connection
+- **Vercel Ready**: Portfolio prepared for Vercel deployment with vercel.json configuration
+- **Contact Form**: Updated to use Formspree for external form handling (no backend required)
+- **Frontend-Only**: Optimized for static hosting platforms like Vercel, Netlify, or GitHub Pages
