@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, floatingAnimation, pulseAnimation } from "@/lib/animations";
-import surajPhoto from "@assets/image_1754539612105.png";
+import surajPhoto from "@assets/WhatsApp Image 2025-07-13 at 12.14.23 PM_1754540083437.jpeg";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
