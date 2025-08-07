@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Github, ExternalLink, Star, Zap, Upload } from "lucide-react";
+import { fadeInUp, staggerContainer, scaleOnHover } from "@/lib/animations";
 
 export default function ProjectsSection() {
   const ref = useRef(null);
@@ -41,30 +41,41 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50" ref={ref}>
+    <section id="projects" className="py-20 bg-amber-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
+          variants={fadeInUp}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Projects</h2>
-          <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Here are some of my recent projects that showcase my skills
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">PRODUCTS <span className="text-orange-500">PROJECTS</span></h2>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={staggerContainer}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
               className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              whileHover={{ y: -10 }}
+              variants={{
+                hidden: { opacity: 0, y: 50, scale: 0.9 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0, 
+                  scale: 1,
+                  transition: { 
+                    duration: 0.6,
+                    ease: "easeOut"
+                  }
+                }
+              }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               <div className="relative overflow-hidden">
                 <motion.img
@@ -141,7 +152,7 @@ export default function ProjectsSection() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
         
         {/* View More Projects Button */}
         <motion.div

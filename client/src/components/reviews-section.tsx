@@ -43,7 +43,7 @@ export default function ReviewsSection() {
   ];
 
   return (
-    <section id="reviews" className="py-20 bg-gray-50" ref={ref}>
+    <section id="reviews" className="py-20 bg-amber-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -51,11 +51,7 @@ export default function ReviewsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Client Reviews</h2>
-          <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            What my clients say about working with me
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Recommendations</h2>
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">

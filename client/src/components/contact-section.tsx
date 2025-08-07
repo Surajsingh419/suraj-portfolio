@@ -64,36 +64,10 @@ export default function ContactSection() {
   return (
     <section 
       id="contact" 
-      className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 text-white relative overflow-hidden"
+      className="py-20 bg-amber-50 text-gray-900 relative overflow-hidden"
       ref={ref}
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
-          className="absolute -top-40 -right-40 w-80 h-80 bg-primary-600 rounded-full opacity-10"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360] 
-          }}
-          transition={{ 
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut" 
-          }}
-        />
-        <motion.div 
-          className="absolute -bottom-40 -left-40 w-60 h-60 bg-blue-400 rounded-full opacity-10"
-          animate={{ 
-            y: [0, -30, 0],
-            scale: [1, 1.1, 1] 
-          }}
-          transition={{ 
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut" 
-          }}
-        />
-      </div>
+
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -103,8 +77,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Let's Work Together</h2>
-          <div className="w-24 h-1 bg-primary-400 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to build something amazing? Let's discuss your next project
           </p>
         </motion.div>
@@ -119,7 +92,7 @@ export default function ContactSection() {
           >
             <div>
               <h3 className="text-3xl font-bold mb-8">Get in Touch</h3>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hello, feel free to reach out!
               </p>
             </div>
@@ -135,8 +108,8 @@ export default function ContactSection() {
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Location</h4>
-                  <p className="text-gray-300">Lucknow, India</p>
+                  <h4 className="text-lg font-semibold text-gray-900">Location</h4>
+                  <p className="text-gray-600">Lucknow, India</p>
                 </div>
               </motion.div>
               
@@ -149,10 +122,10 @@ export default function ContactSection() {
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Phone</h4>
+                  <h4 className="text-lg font-semibold text-gray-900">Phone</h4>
                   <a 
                     href="tel:+919318321411" 
-                    className="text-primary-400 hover:text-primary-300 transition-colors duration-300"
+                    className="text-primary-600 hover:text-primary-700 transition-colors duration-300"
                   >
                     +91-9318321411
                   </a>
@@ -168,10 +141,10 @@ export default function ContactSection() {
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Email</h4>
+                  <h4 className="text-lg font-semibold text-gray-900">Email</h4>
                   <a 
                     href="mailto:sursingh1996@gmail.com" 
-                    className="text-primary-400 hover:text-primary-300 transition-colors duration-300"
+                    className="text-primary-600 hover:text-primary-700 transition-colors duration-300"
                   >
                     sursingh1996@gmail.com
                   </a>
@@ -181,27 +154,27 @@ export default function ContactSection() {
             
             {/* Social Links */}
             <div className="pt-8">
-              <h4 className="text-lg font-semibold text-white mb-4">Follow me on</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow me on</h4>
               <div className="flex space-x-4">
                 <motion.a
                   href="https://linkedin.com/in/surajsingh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-700 hover:bg-primary-600 rounded-full flex items-center justify-center transition-all duration-300"
+                  className="w-12 h-12 bg-gray-200 hover:bg-primary-600 rounded-full flex items-center justify-center transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Linkedin className="w-6 h-6 text-white" />
+                  <Linkedin className="w-6 h-6 text-gray-600 hover:text-white" />
                 </motion.a>
                 <motion.a
                   href="https://github.com/surajsingh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-700 hover:bg-primary-600 rounded-full flex items-center justify-center transition-all duration-300"
+                  className="w-12 h-12 bg-gray-200 hover:bg-primary-600 rounded-full flex items-center justify-center transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Github className="w-6 h-6 text-white" />
+                  <Github className="w-6 h-6 text-gray-600 hover:text-white" />
                 </motion.a>
               </div>
             </div>
@@ -213,11 +186,11 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-6">Send me a message</h3>
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send me a message</h3>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Your Name
                   </label>
                   <Input
@@ -227,13 +200,13 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border-white/20 text-white placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="Enter your name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Your Email
                   </label>
                   <Input
@@ -243,13 +216,13 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border-white/20 text-white placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="Enter your email"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                     Subject
                   </label>
                   <Input
@@ -259,13 +232,13 @@ export default function ContactSection() {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border-white/20 text-white placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="What's this about?"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message
                   </label>
                   <Textarea
@@ -275,7 +248,7 @@ export default function ContactSection() {
                     onChange={handleInputChange}
                     rows={5}
                     required
-                    className="w-full bg-white/10 border-white/20 text-white placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500 resize-none"
+                    className="w-full bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-primary-500 focus:border-primary-500 resize-none"
                     placeholder="Tell me about your project..."
                   />
                 </div>

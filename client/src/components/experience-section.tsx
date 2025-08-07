@@ -36,7 +36,7 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-white" ref={ref}>
+    <section id="experience" className="py-20 bg-amber-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -45,10 +45,6 @@ export default function ExperienceSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Experience</h2>
-          <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            My professional journey in backend development
-          </p>
         </motion.div>
         
         {/* Timeline */}

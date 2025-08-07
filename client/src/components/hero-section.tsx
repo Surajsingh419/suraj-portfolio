@@ -1,198 +1,166 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, floatingAnimation, pulseAnimation } from "@/lib/animations";
 
 export default function HeroSection() {
-  const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
-  const texts = [
-    "Backend Developer",
-    "API Architect", 
-    "Node.js Specialist",
-    "Cloud Engineer"
+  const stats = [
+    { number: "4+", label: "Years", sublabel: "Work Experience" },
+    { number: "12", label: "Startups", sublabel: "Served" },
+    { number: "32", label: "Projects", sublabel: "Completed" },
+    { number: "8", label: "Countries", sublabel: "Worked Remotely" }
   ];
 
-  useEffect(() => {
-    const typeSpeed = isDeleting ? 100 : 200;
-    const currentText = texts[currentIndex];
-
-    const timeout = setTimeout(() => {
-      if (isDeleting) {
-        setDisplayText(currentText.substring(0, displayText.length - 1));
-        if (displayText === "") {
-          setIsDeleting(false);
-          setCurrentIndex((prev) => (prev + 1) % texts.length);
-        }
-      } else {
-        setDisplayText(currentText.substring(0, displayText.length + 1));
-        if (displayText === currentText) {
-          setTimeout(() => setIsDeleting(true), 2000);
-        }
-      }
-    }, typeSpeed);
-
-    return () => clearTimeout(timeout);
-  }, [displayText, currentIndex, isDeleting, texts]);
-
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+  const skills = ["Backend Developer", "Node.js Engineer", "Data Scientist", "UI/UX Designer"];
 
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-blue-50 via-white to-primary-50 text-gray-900 overflow-hidden"
+      className="min-h-screen bg-amber-50 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
-          className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full opacity-20"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360] 
-          }}
-          transition={{ 
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut" 
-          }}
-        />
-        <motion.div 
-          className="absolute -bottom-40 -left-40 w-60 h-60 bg-blue-200 rounded-full opacity-20"
-          animate={{ 
-            y: [0, -30, 0],
-            scale: [1, 1.1, 1] 
-          }}
-          transition={{ 
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut" 
-          }}
-        />
-      </div>
+      {/* Floating Background Elements */}
+      <motion.div 
+        className="absolute top-20 right-20 w-32 h-32 bg-orange-200 rounded-full opacity-20"
+        variants={floatingAnimation}
+        animate="animate"
+      />
+      <motion.div 
+        className="absolute bottom-40 left-20 w-24 h-24 bg-yellow-200 rounded-full opacity-20"
+        variants={floatingAnimation}
+        animate="animate"
+        transition={{ delay: 1 }}
+      />
+      <motion.div 
+        className="absolute top-1/2 left-1/4 w-16 h-16 bg-amber-200 rounded-full opacity-30"
+        variants={pulseAnimation}
+        animate="animate"
+      />
       
-      <div className="container mx-auto px-4 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+      {/* Navigation */}
+      <nav className="flex justify-between items-center py-6 max-w-7xl mx-auto">
+        <div className="text-2xl font-bold text-gray-900">Portfolio</div>
+        <div className="hidden md:flex space-x-8 text-gray-600">
+          <button onClick={() => scrollToSection('about')} className="hover:text-gray-900 transition-colors">About</button>
+          <button onClick={() => scrollToSection('skills')} className="hover:text-gray-900 transition-colors">Skills</button>
+          <button onClick={() => scrollToSection('experience')} className="hover:text-gray-900 transition-colors">Experience</button>
+          <button onClick={() => scrollToSection('reviews')} className="hover:text-gray-900 transition-colors">Recommendations</button>
+          <button onClick={() => scrollToSection('projects')} className="hover:text-gray-900 transition-colors">Products</button>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto pt-20">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
         >
-          <motion.div 
-            className="mb-8"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+          {/* Left Side - Photo and Contact */}
+          <motion.div
+            variants={fadeInLeft}
+            className="flex flex-col items-center lg:items-start"
           >
-            {/* Professional avatar with photo */}
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl border-4 border-primary-200">
-              <img 
-                src="/attached_assets/WhatsApp Image 2025-07-13 at 12.14.23 PM_1754537244810.jpeg" 
-                alt="Suraj Singh - Backend Developer" 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative mb-8">
+              <div className="w-80 h-96 rounded-3xl overflow-hidden shadow-2xl bg-gray-200">
+                <img 
+                  src="/attached_assets/WhatsApp Image 2025-07-13 at 12.14.23 PM_1754537244810.jpeg" 
+                  alt="Suraj Singh - Backend Developer" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            <motion.button
+              onClick={() => scrollToSection('contact')}
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Mail className="w-5 h-5" />
+              Contact Me
+            </motion.button>
+          </motion.div>
+
+          {/* Right Side - Info */}
+          <motion.div
+            variants={fadeInRight}
+            className="space-y-8"
+          >
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+                Suraj Singh
+                <div className="flex items-center gap-3 mt-2">
+                  <motion.a
+                    href="https://linkedin.com/in/surajsingh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-blue-600 transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <Linkedin className="w-6 h-6" />
+                  </motion.a>
+                  <motion.a
+                    href="https://github.com/surajsingh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-gray-800 transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <Github className="w-6 h-6" />
+                  </motion.a>
+                </div>
+              </h1>
+              
+              <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
+                Committed to convert every possibility into reality. What truly excites me 
+                is crafting designs with absolute precision and creating well-structured, 
+                seamless backends. I have a genuine knack for fusing different domains 
+                and technologies with my development skills. Over the course of 4+ years, 
+                I've immersed myself in various commercial projects, constantly embracing 
+                new tech stacks with each opportunity. This journey has not only made 
+                me proficient in the MERN stack but has also transformed me into a 
+                quick learner, adapting effortlessly to new technologies and changing 
+                scenarios.
+              </p>
+            </div>
+
+            {/* Skills Tags */}
+            <div className="flex flex-wrap gap-3">
+              {skills.map((skill, index) => (
+                <motion.span
+                  key={skill}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                  className="bg-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-medium"
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 + index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="text-3xl font-bold text-gray-900">{stat.number}</div>
+                  <div className="text-lg font-semibold text-gray-700">{stat.label}</div>
+                  <div className="text-sm text-gray-500">{stat.sublabel}</div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
-          
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">Suraj Singh</span>
-          </motion.h1>
-          
-          <motion.div 
-            className="text-xl md:text-3xl mb-6 h-16 flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-          >
-            <span className="font-mono text-primary-600">{displayText}</span>
-            <motion.span 
-              className="ml-1 text-primary-600"
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              |
-            </motion.span>
-          </motion.div>
-          
-          <motion.p 
-            className="text-xl md:text-2xl mb-8 text-gray-600 max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-          >
-            Backend Developer with 4+ years of experience crafting scalable systems and robust APIs
-          </motion.p>
-          
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-          >
-            <motion.button
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-primary-600 hover:bg-primary-700 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View My Work
-            </motion.button>
-            <motion.button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get In Touch
-            </motion.button>
-          </motion.div>
-          
-          {/* Social Links */}
-          <motion.div 
-            className="flex justify-center space-x-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4, duration: 0.8 }}
-          >
-            <motion.a
-              href="https://linkedin.com/in/surajsingh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Linkedin className="w-8 h-8" />
-            </motion.a>
-            <motion.a
-              href="https://github.com/surajsingh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
-              whileHover={{ scale: 1.2, rotate: -5 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Github className="w-8 h-8" />
-            </motion.a>
-          </motion.div>
         </motion.div>
-        
-        {/* Scroll Indicator */}
-        <motion.button
-          onClick={scrollToAbout}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary-600 hover:text-primary-500 transition-colors duration-300"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          whileHover={{ scale: 1.1 }}
-        >
-          <ChevronDown className="w-6 h-6" />
-        </motion.button>
       </div>
     </section>
   );
