@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, floatingAnimation, pulseAnimation } from "@/lib/animations";
+import surajPhoto from "@assets/image_1754539612105.png";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -67,9 +68,14 @@ export default function HeroSection() {
             <div className="relative mb-8">
               <div className="w-80 h-96 rounded-3xl overflow-hidden shadow-2xl bg-gray-200">
                 <img 
-                  src="/attached_assets/image_1754539612105.png" 
+                  src={surajPhoto} 
                   alt="Suraj Singh - Backend Developer" 
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.error('Image failed to load:', e);
+                    e.currentTarget.style.display = 'none';
+                  }}
+                  onLoad={() => console.log('Image loaded successfully')}
                 />
               </div>
             </div>
