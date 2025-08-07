@@ -1,0 +1,61 @@
+Personal Details
+Name: Suraj Singh
+
+Location: Lucknow, India
+
+Contact: +91-9318321411, sursingh1996@gmail.com
+
+Online Profiles: LinkedIn and GitHub links are referenced for professional networking and showcasing code/work.
+
+Professional Title & Summary
+Title: Backend Developer
+
+Experience: 4+ years
+
+Summary: You are a results-oriented Backend Developer skilled in designing, developing, and deploying scalable backend systems. You specialize in Node.js, MongoDB, Express, AWS, and microservices architecture. Your expertise includes building production-ready APIs, integrating blockchain payments, and optimizing server performance. You are known for cross-team collaboration, proficiency in Agile practices, and delivering clean, maintainable code.
+
+Technical Skills
+Languages: JavaScript
+
+Frameworks: Node.js, Express.js
+
+Databases: MongoDB, Redis, Firestore
+
+DevOps/Cloud: AWS (EC2, S3), Docker
+
+Tools: Postman, Git, VS Code
+
+Soft Skills: Problem-solving, teamwork, time management, and critical thinking
+
+Professional Experience
+IdeaUsher – Backend Developer (Mohali, May 2022 – Present)
+Developed scalable event ticketing APIs with payment integration (Tixet).
+
+Built e-commerce backends, including complex subscription logic (Angolazone).
+
+Integrated blockchain for product purchases (BlockVare).
+
+Developed fitness tracking and workout APIs (PMAC).
+
+Created a virtual real estate platform using blockchain (Veelive).
+
+Built backend services for an e-learning platform (Teaching With Purpose).
+
+FunctionUp – Backend Intern (Bangalore, Oct 2021 – Mar 2022)
+Built RESTful APIs using Node.js, Express, and MongoDB.
+
+Gained experience with Redis, AWS S3, Git, and caching strategies.
+
+Education
+B.Tech in Computer Science: H.R. Institute of Engineering & Technology (2012–2016), CGPA: 6.9
+
+Senior Secondary (UP Board): 61.5%
+
+Secondary (UP Board): 68.5%
+
+Projects
+E-commerce & Cart Management: Developed a backend with JWT-based authentication. The project is available on GitHub.
+
+Book Management: Built a CRUD backend system using AWS S3 for file storage. Codebase is on GitHub.
+
+URL Shortener: Created a URL shortening service using Redis integration, available on GitHub.
