@@ -12,7 +12,7 @@ export default function ReviewsSection() {
       name: "Sarah Johnson",
       position: "CTO at TechVision",
       company: "TechVision Solutions",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
       rating: 5,
       review: "Suraj delivered an exceptional e-commerce backend system that exceeded our expectations. His expertise in Node.js and MongoDB helped us scale efficiently. The API performance is outstanding!"
     },
@@ -21,8 +21,8 @@ export default function ReviewsSection() {
       position: "Product Manager",
       company: "InnovateLab",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
-      rating: 5,
-      review: "Working with Suraj was a game-changer for our blockchain integration project. His technical skills and problem-solving abilities are top-notch. Delivered on time and within budget."
+      rating: 4,
+      review: "Working with Suraj was great for our project. His technical skills are solid and he delivered good results. Communication could have been slightly better, but overall a positive experience."
     },
     {
       name: "Emily Rodriguez",
@@ -37,10 +37,13 @@ export default function ReviewsSection() {
       position: "Startup Founder",
       company: "NextGen Analytics",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
-      rating: 5,
-      review: "Suraj built our real-time analytics platform from scratch. His understanding of scalable systems and Redis optimization was crucial for our success. Outstanding developer!"
+      rating: 4,
+      review: "Suraj built our analytics platform with good attention to detail. The Redis optimization was helpful for performance. Timeline was reasonable and the final product met our requirements well."
     }
   ];
+
+  // Calculate average rating
+  const averageRating = reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length;
 
   return (
     <section id="reviews" className="py-20 bg-amber-50" ref={ref}>
@@ -82,14 +85,14 @@ export default function ReviewsSection() {
                   <p className="text-gray-500 text-sm">{review.company}</p>
                 </div>
                 <div className="flex">
-                  {[...Array(review.rating)].map((_, i) => (
+                  {[...Array(5)].map((_, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, scale: 0 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                       transition={{ delay: index * 0.2 + i * 0.1 + 0.5 }}
                     >
-                      <Star className="w-5 h-5 text-yellow-500 fill-current" />
+                      <Star className={`w-5 h-5 ${i < review.rating ? 'text-yellow-500 fill-current' : 'text-gray-300'}`} />
                     </motion.div>
                   ))}
                 </div>
@@ -121,10 +124,10 @@ export default function ReviewsSection() {
             <div className="flex items-center justify-center mb-4">
               <div className="flex mr-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-yellow-500 fill-current" />
+                  <Star key={i} className={`w-6 h-6 ${i < Math.floor(averageRating) ? 'text-yellow-500 fill-current' : 'text-gray-300'}`} />
                 ))}
               </div>
-              <span className="text-3xl font-bold text-gray-900">5.0</span>
+              <span className="text-3xl font-bold text-gray-900">{averageRating.toFixed(1)}</span>
             </div>
             <p className="text-gray-600">Average rating from {reviews.length} satisfied clients</p>
           </div>

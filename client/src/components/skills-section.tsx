@@ -7,31 +7,27 @@ export default function SkillsSection() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const skills = [
-    // Frontend Technologies
+    // Row 1 - Frontend
     { name: "HTML", color: "bg-orange-100", icon: "🌐" },
     { name: "JavaScript", color: "bg-yellow-100", icon: "JS" },
     { name: "TypeScript", color: "bg-blue-100", icon: "TS" },
     { name: "React", color: "bg-cyan-100", icon: "⚛️" },
-    
-    // Backend Technologies
     { name: "Node.js", color: "bg-green-100", icon: "🟢" },
     { name: "Express.js", color: "bg-gray-100", icon: "EX" },
-    { name: "Python", color: "bg-blue-100", icon: "🐍" },
+    { name: "Python", color: "bg-purple-100", icon: "🐍" },
     { name: "Java", color: "bg-red-100", icon: "☕" },
     
-    // Databases
+    // Row 2 - Databases & Storage
     { name: "MongoDB", color: "bg-green-100", icon: "🍃" },
     { name: "Redis", color: "bg-red-100", icon: "📦" },
     { name: "Firebase", color: "bg-yellow-100", icon: "🔥" },
     { name: "PostgreSQL", color: "bg-blue-100", icon: "🐘" },
-    
-    // DevOps & Tools
     { name: "Docker", color: "bg-blue-100", icon: "🐳" },
     { name: "AWS", color: "bg-orange-100", icon: "☁️" },
     { name: "Git", color: "bg-gray-100", icon: "📝" },
     { name: "Jenkins", color: "bg-blue-100", icon: "🔧" },
     
-    // Additional Skills
+    // Row 3 - Advanced Technologies
     { name: "Nest.js", color: "bg-red-100", icon: "🚀" },
     { name: "FastAPI", color: "bg-green-100", icon: "⚡" },
     { name: "GraphQL", color: "bg-pink-100", icon: "📊" },
@@ -52,7 +48,7 @@ export default function SkillsSection() {
         
         {/* Skills Grid */}
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 md:gap-6"
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -60,7 +56,7 @@ export default function SkillsSection() {
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              className={`${skill.color} p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group cursor-pointer`}
+              className={`${skill.color} p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group cursor-pointer flex flex-col items-center justify-center aspect-square`}
               variants={{
                 hidden: { opacity: 0, scale: 0.8, y: 20 },
                 visible: { 
@@ -76,10 +72,10 @@ export default function SkillsSection() {
               whileHover={{ y: -8, scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-2xl md:text-3xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
                 {skill.icon}
               </div>
-              <h3 className="text-sm font-semibold text-gray-800">{skill.name}</h3>
+              <h3 className="text-xs md:text-sm font-semibold text-gray-800 leading-tight">{skill.name}</h3>
             </motion.div>
           ))}
         </motion.div>
