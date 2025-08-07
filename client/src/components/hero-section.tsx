@@ -43,12 +43,12 @@ export default function HeroSection() {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 text-white overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-blue-50 via-white to-primary-50 text-gray-900 overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          className="absolute -top-40 -right-40 w-80 h-80 bg-primary-600 rounded-full opacity-10"
+          className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full opacity-20"
           animate={{ 
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360] 
@@ -60,7 +60,7 @@ export default function HeroSection() {
           }}
         />
         <motion.div 
-          className="absolute -bottom-40 -left-40 w-60 h-60 bg-blue-400 rounded-full opacity-10"
+          className="absolute -bottom-40 -left-40 w-60 h-60 bg-blue-200 rounded-full opacity-20"
           animate={{ 
             y: [0, -30, 0],
             scale: [1, 1.1, 1] 
@@ -85,9 +85,13 @@ export default function HeroSection() {
             animate={{ scale: 1 }}
             transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
           >
-            {/* Professional avatar */}
-            <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-4xl font-bold shadow-2xl">
-              SS
+            {/* Professional avatar with photo */}
+            <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl border-4 border-primary-200">
+              <img 
+                src="/attached_assets/WhatsApp Image 2025-07-13 at 12.14.23 PM_1754537244810.jpeg" 
+                alt="Suraj Singh - Backend Developer" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
           
@@ -97,7 +101,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-blue-400">Suraj Singh</span>
+            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-600">Suraj Singh</span>
           </motion.h1>
           
           <motion.div 
@@ -106,9 +110,9 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <span className="font-mono text-primary-300">{displayText}</span>
+            <span className="font-mono text-primary-600">{displayText}</span>
             <motion.span 
-              className="ml-1 text-primary-300"
+              className="ml-1 text-primary-600"
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
@@ -117,7 +121,7 @@ export default function HeroSection() {
           </motion.div>
           
           <motion.p 
-            className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl mb-8 text-gray-600 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
@@ -160,7 +164,7 @@ export default function HeroSection() {
               href="https://linkedin.com/in/surajsingh"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary-400 transition-colors duration-300"
+              className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -170,7 +174,7 @@ export default function HeroSection() {
               href="https://github.com/surajsingh"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary-400 transition-colors duration-300"
+              className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
               whileHover={{ scale: 1.2, rotate: -5 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -182,7 +186,7 @@ export default function HeroSection() {
         {/* Scroll Indicator */}
         <motion.button
           onClick={scrollToAbout}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary-400 hover:text-primary-300 transition-colors duration-300"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary-600 hover:text-primary-500 transition-colors duration-300"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           whileHover={{ scale: 1.1 }}

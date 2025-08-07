@@ -67,8 +67,8 @@ export default function AboutSection() {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
-                  alt="Developer workspace with modern setup" 
+                  src="/attached_assets/WhatsApp Image 2025-07-13 at 12.14.23 PM_1754537244810.jpeg" 
+                  alt="Suraj Singh - Backend Developer" 
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-900/20 to-transparent"></div>
