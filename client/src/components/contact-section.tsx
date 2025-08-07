@@ -104,7 +104,7 @@ export default function ContactSection() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -118,14 +118,14 @@ export default function ContactSection() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900">Phone</h4>
                   <a 
                     href="tel:+919318321411" 
-                    className="text-primary-600 hover:text-primary-700 transition-colors duration-300"
+                    className="text-amber-600 hover:text-amber-700 transition-colors duration-300"
                   >
                     +91-9318321411
                   </a>
@@ -137,14 +137,14 @@ export default function ContactSection() {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900">Email</h4>
                   <a 
                     href="mailto:sursingh1996@gmail.com" 
-                    className="text-primary-600 hover:text-primary-700 transition-colors duration-300"
+                    className="text-amber-600 hover:text-amber-700 transition-colors duration-300"
                   >
                     sursingh1996@gmail.com
                   </a>
@@ -160,7 +160,7 @@ export default function ContactSection() {
                   href="https://linkedin.com/in/surajsingh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-200 hover:bg-primary-600 rounded-full flex items-center justify-center transition-all duration-300"
+                  className="w-12 h-12 bg-gray-200 hover:bg-amber-600 rounded-full flex items-center justify-center transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -170,7 +170,7 @@ export default function ContactSection() {
                   href="https://github.com/surajsingh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-200 hover:bg-primary-600 rounded-full flex items-center justify-center transition-all duration-300"
+                  className="w-12 h-12 bg-gray-200 hover:bg-amber-600 rounded-full flex items-center justify-center transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -256,7 +256,7 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   disabled={contactMutation.isPending}
-                  className="w-full bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {contactMutation.isPending ? (
                     <div className="flex items-center">
