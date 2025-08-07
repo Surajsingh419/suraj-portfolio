@@ -67,7 +67,7 @@ export default function HeroSection() {
             <div className="relative mb-8">
               <div className="w-80 h-96 rounded-3xl overflow-hidden shadow-2xl bg-gray-200">
                 <img 
-                  src="/attached_assets/WhatsApp Image 2025-07-13 at 12.14.23 PM_1754537244810.jpeg" 
+                  src="/attached_assets/image_1754539612105.png" 
                   alt="Suraj Singh - Backend Developer" 
                   className="w-full h-full object-cover"
                 />
