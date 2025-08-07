@@ -63,7 +63,7 @@ export default function HeroSection() {
           {/* Left Side - Photo and Contact */}
           <motion.div
             variants={fadeInLeft}
-            className="flex flex-col items-center lg:items-start"
+            className="flex flex-col items-center"
           >
             <div className="relative mb-8">
               <div className="w-80 h-96 rounded-3xl overflow-hidden shadow-2xl bg-gray-200">
