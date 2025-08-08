@@ -1,0 +1,24 @@
+{
+  "name": "surajportfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Website This repository contains the source code and assets for my personal portfolio website. The website showcases my projects, skills, work experience, and contact information. Built using modern web technologies, it serves as an interactive resume and a platform to present my work to potential employers.\r =======\r # suraj-portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Surajsingh419/suraj-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Surajsingh419/suraj-portfolio/issues"
+  },
+  "homepage": "https://github.com/Surajsingh419/suraj-portfolio#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "vite": "^7.1.1"
+  }
+}
