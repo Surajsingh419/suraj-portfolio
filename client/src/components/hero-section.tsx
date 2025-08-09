@@ -18,31 +18,30 @@ export default function HeroSection() {
   const skills = ["Backend Developer", "Node.js Engineer", "Data Scientist", "UI/UX Designer"];
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="min-h-screen bg-amber-50 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
       {/* Floating Background Elements */}
-      <motion.div 
+      <motion.div
         className="absolute top-20 right-20 w-32 h-32 bg-orange-200 rounded-full opacity-20"
         variants={floatingAnimation}
         animate="animate"
       />
-      <motion.div 
+      <motion.div
         className="absolute bottom-40 left-20 w-24 h-24 bg-yellow-200 rounded-full opacity-20"
         variants={floatingAnimation}
         animate="animate"
         transition={{ delay: 1 }}
       />
-      <motion.div 
+      <motion.div
         className="absolute top-1/2 left-1/4 w-16 h-16 bg-amber-200 rounded-full opacity-30"
         variants={pulseAnimation}
         animate="animate"
       />
-      
+
       {/* Navigation */}
-      <nav className="flex justify-between items-center py-6 max-w-7xl mx-auto">
-        <div className="text-2xl font-bold text-gray-900">Portfolio</div>
+      <nav className="flex justify-end items-center py-6 max-w-7xl mx-auto">
         <div className="hidden md:flex space-x-8 text-gray-600">
           <button onClick={() => scrollToSection('about')} className="hover:text-gray-900 transition-colors">About</button>
           <button onClick={() => scrollToSection('skills')} className="hover:text-gray-900 transition-colors">Skills</button>
@@ -54,7 +53,7 @@ export default function HeroSection() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto pt-20">
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           variants={staggerContainer}
           initial="hidden"
@@ -67,9 +66,9 @@ export default function HeroSection() {
           >
             <div className="relative mb-8">
               <div className="w-80 h-96 rounded-3xl overflow-hidden shadow-2xl bg-gray-200">
-                <img 
-                  src={surajPhoto} 
-                  alt="Suraj Singh - Backend Developer" 
+                <img
+                  src={surajPhoto}
+                  alt="Suraj Singh - Backend Developer"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     console.error('Image failed to load:', e);
@@ -79,7 +78,7 @@ export default function HeroSection() {
                 />
               </div>
             </div>
-            
+
             <motion.button
               onClick={() => scrollToSection('contact')}
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2"
@@ -120,16 +119,16 @@ export default function HeroSection() {
                   </motion.a>
                 </div>
               </h1>
-              
+
               <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
-                Committed to convert every possibility into reality. What truly excites me 
-                is crafting designs with absolute precision and creating well-structured, 
-                seamless backends. I have a genuine knack for fusing different domains 
-                and technologies with my development skills. Over the course of 4+ years, 
-                I've immersed myself in various commercial projects, constantly embracing 
-                new tech stacks with each opportunity. This journey has not only made 
-                me proficient in the MERN stack but has also transformed me into a 
-                quick learner, adapting effortlessly to new technologies and changing 
+                Committed to convert every possibility into reality. What truly excites me
+                is crafting designs with absolute precision and creating well-structured,
+                seamless backends. I have a genuine knack for fusing different domains
+                and technologies with my development skills. Over the course of 4+ years,
+                I've immersed myself in various commercial projects, constantly embracing
+                new tech stacks with each opportunity. This journey has not only made
+                me proficient in the MERN stack but has also transformed me into a
+                quick learner, adapting effortlessly to new technologies and changing
                 scenarios.
               </p>
             </div>

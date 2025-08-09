@@ -13,7 +13,7 @@ export default function ReviewsSection() {
       position: "CTO at TechVision",
       company: "TechVision Solutions",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150",
-      rating: 5,
+      rating: 4,
       review: "Suraj delivered an exceptional e-commerce backend system that exceeded our expectations. His expertise in Node.js and MongoDB helped us scale efficiently. The API performance is outstanding!"
     },
     {

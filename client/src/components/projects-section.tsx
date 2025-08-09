@@ -13,7 +13,7 @@ export default function ProjectsSection() {
       description: "Built a comprehensive e-commerce backend with JWT-based authentication, cart management, and secure payment integration.",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
       technologies: ["Node.js", "MongoDB", "JWT"],
-      githubUrl: "https://github.com/surajsingh/ecommerce-backend",
+      githubUrl: "https://github.com/Surajsingh419/shopping-cart-project/tree/project5/productManagment",
       liveUrl: "",
       featured: true,
       icon: Star
@@ -23,7 +23,7 @@ export default function ProjectsSection() {
       description: "Developed a CRUD backend system for book management with AWS S3 integration for file storage and retrieval.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
       technologies: ["Express", "AWS S3", "REST API"],
-      githubUrl: "https://github.com/surajsingh/book-management",
+      githubUrl: "https://github.com/Surajsingh419/project4-book-managment/tree/project-4-bookManagement",
       liveUrl: "",
       featured: false,
       icon: Upload
@@ -33,7 +33,7 @@ export default function ProjectsSection() {
       description: "Created a high-performance URL shortening service with Redis caching for optimal speed and analytics tracking.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
       technologies: ["Redis", "Node.js", "Analytics"],
-      githubUrl: "https://github.com/surajsingh/url-shortener",
+      githubUrl: "https://github.com/Surajsingh419/PROJECT-3-URL-SHORTNER/tree/project3/urlshortner",
       liveUrl: "",
       featured: false,
       icon: Zap
@@ -165,7 +165,7 @@ export default function ProjectsSection() {
             href="https://github.com/surajsingh"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center bg-black  text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
